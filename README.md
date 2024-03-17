@@ -14,6 +14,11 @@ This project involves training a Denoising Diffusion Probabilistic Model (DDPM) 
 
 This project is developed with an educational purpose in mind, aimed at enthusiasts and learners who are keen on a white-box understanding of Denoising Diffusion Probabilistic Models (DDPMs). By building a DDPM from scratch, I enjoy understanding the inner workings of such models, providing a clear and comprehensive insight into their mechanisms, challenges, and immense potential in generative tasks.
 
+### For Learners:
+- **Deep Dive into DDPMs**: This project serves as a practical guide to understanding the principles, mathematics, and implementation details that underpin DDPMs.
+- **Hands-On Experience**: By following along with the project, learners can gain hands-on experience in implementing, training, and experimenting with diffusion models, fostering a deeper understanding of deep learning.
+- **Open-Ended Exploration**: The project encourages exploration beyond the provided implementation, inviting learners to tweak, enhance, and adapt the model to different datasets or creative applications.
+
 ## Environment Setup Instructions
 
 A detailed setup is essential for replicating the project results. The environment setup involves creating a dedicated conda environment with all necessary dependencies.
@@ -73,19 +78,6 @@ The project demonstrates the ability to generate realistic images of cars using 
 - **Dataset Expansion**: Experimenting with different and larger datasets to explore the model's versatility.
 - **Architecture Enhancements**: Investigating the impact of modifications to the U-Net architecture on the model's performance.
 - **Optimization Techniques**: Applying advanced training techniques and optimizations for further improvements in image quality.
-
----
-## Purpose and Educational Value
-
-This project is developed with an educational purpose in mind, aimed at enthusiasts and learners who are keen on a white-box understanding of Denoising Diffusion Probabilistic Models (DDPMs). By building a DDPM from scratch, I intend to demystify the inner workings of such models, providing a clear and comprehensive insight into their mechanisms, challenges, and immense potential in generative tasks.
-
-### For Learners:
-
-- **Deep Dive into DDPMs**: This project serves as a practical guide to understanding the principles, mathematics, and implementation details that underpin DDPMs.
-- **Hands-On Experience**: By following along with the project, learners can gain hands-on experience in implementing, training, and experimenting with diffusion models, fostering a deeper understanding of deep learning.
-- **Open-Ended Exploration**: The project encourages exploration beyond the provided implementation, inviting learners to tweak, enhance, and adapt the model to different datasets or creative applications.
-
----
 
 # Stay Updated
 
