@@ -5,6 +5,25 @@ We will train a DDPM from scratch. After training the model will be able to gene
 ![image](./assets/download.png)
 
 ---
+
+## Environment Setup Instructions
+
+To install the required libraries and dependencies, you can create a conda environment using the provided `environment.yml` file. Follow the steps below:
+
+1. Clone this repository to your local machine.
+
+```py
+git clone https://github.com/MayurHulke/Diffusion-model-from-scratch.git
+```
+2. Navigate to the directory where the `environment.yml` file is located.
+3. Open a terminal or command prompt.
+4. Run the following command to create the conda environment:
+
+```bash
+conda env create -f environment.yml
+conda activate DDPM
+```
+
 ## Precomputed constants
 
 ![image](./assets/a1.png)
