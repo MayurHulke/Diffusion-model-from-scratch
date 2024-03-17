@@ -1,62 +1,102 @@
-# Train a Denoising Diffusion Probabilistic Model from scratch
+# Denoising Diffusion Probabilistic Model from Scratch
 
-We will train a DDPM from scratch. After training the model will be able to generate images of cars.
+This project involves training a Denoising Diffusion Probabilistic Model (DDPM) from scratch to generate high-quality images of cars. By leveraging the principles of diffusion models, this project demonstrates the capability to generate new data samples that mimic the distribution of a given dataset. After thorough training, the model can produce realistic images of cars, showcasing the potential of diffusion models in generative tasks.
 
-![image](./assets/download.png)
+![Generated Cars Image](./assets/download.png)
 
----
+## Project Overview
+
+- **Objective**: To understand and implement a DDPM capable of generating realistic images of cars.
+- **Techniques Used**: Diffusion processes, reverse diffusion, neural network training (U-Net architecture), and various PyTorch techniques.
+- **Results**: The model, after training, generates images that closely resemble real cars, illustrating the power of diffusion models in generative applications.
+
+## Purpose and Educational Value
+
+This project is developed with an educational purpose in mind, aimed at enthusiasts and learners who are keen on a white-box understanding of Denoising Diffusion Probabilistic Models (DDPMs). By building a DDPM from scratch, I enjoy understanding the inner workings of such models, providing a clear and comprehensive insight into their mechanisms, challenges, and immense potential in generative tasks.
 
 ## Environment Setup Instructions
 
-To install the required libraries and dependencies, you can create a conda environment using the provided `environment.yml` file. Follow the steps below:
+A detailed setup is essential for replicating the project results. The environment setup involves creating a dedicated conda environment with all necessary dependencies.
 
-1. Clone this repository to your local machine.
+1. **Clone the Repository**:
+   - Use the following command to clone the project repository:
+     ```bash
+     git clone https://github.com/MayurHulke/Diffusion-model-from-scratch.git
+     ```
 
-```py
-git clone https://github.com/MayurHulke/Diffusion-model-from-scratch.git
-```
-2. Navigate to the directory where the `environment.yml` file is located.
-3. Open a terminal or command prompt.
-4. Run the following command to create the conda environment:
+2. **Create and Activate the Conda Environment**:
+   - Navigate to the cloned directory and run:
+     ```bash
+     conda env create -f environment.yml
+     conda activate DDPM
+     ```
 
-```bash
-conda env create -f environment.yml
-conda activate DDPM
-```
+## Training Process
 
-## Precomputed constants
+The training involves several steps, from setting up a reproducible environment to initializing the model and defining the training loop. Key components include:
 
-![image](./assets/a1.png)
+- **Reproducibility**: Ensuring that results are consistent across runs by setting seeds and using deterministic algorithms.
+- **Data Preparation**: Loading and preprocessing the Stanford Cars dataset, including resizing and normalization.
+- **Model Architecture**: Implementing and utilizing a U-Net model, tailored for the diffusion process.
+- **Training Dynamics**: Leveraging optimizers, learning rate schedules, and specifically designed loss functions to train the model effectively.
 
-These plots visualizes several key terms related to the diffusion process that were pre-calculated in the previous cell. The visualizations are laid out in a 2x2 grid, each plotting a different term as a function of the diffusion step. Let's dive into each subplot:
+### Precomputed Constants Visualization
 
-1. **Alpha Values over Diffusion Steps:**
-   - This plot shows the alpha values (alphas) across the diffusion steps. Alpha values represent the proportion of the original signal that is retained after each step of adding noise. A plot of alpha values provides insight into how much original content is preserved as the diffusion process progresses.
+Precomputed constants such as alpha values and their cumulative products are vital for both the forward and reverse diffusion processes. Their visualization helps understand the model's behavior throughout the diffusion steps.
 
-2. **Alpha Cumulative Product over Diffusion Steps:**
-   - The second plot visualizes the cumulative product of alpha values (alphas_cumprod). This measure reflects the cumulative effect of noise addition over time, indicating the overall proportion of the original signal still present after \( t \) steps. The curve typically shows a decreasing trend, illustrating the gradual transition from data to noise.
+![Precomputed Constants](./assets/a1.png)
 
-3. **Sqrt(Alpha Cumulative Product) over Diffusion Steps:**
-   - This subplot displays the square root of the cumulative product of alpha values (sqrt_alphas_cumprod). The square root operation is often applied in diffusion models for scaling purposes during both the forward and reverse processes. This plot helps to understand the scaling factor applied to the data or noise at each step.
+### Diffusion Steps Visualization
 
-4. **Posterior Variance over Diffusion Steps:**
-   - The final plot shows the posterior variance (posterior_variance) across the diffusion steps. The posterior variance is a critical parameter in the reverse diffusion process, guiding the amount of noise that needs to be removed at each step to recover the original data from its noised version. The plot of posterior variance across steps provides insight into how the uncertainty about the original data decreases as we move backward through the diffusion process.
+Visualizing the diffusion steps offers insights into how the model progressively adds noise to the images until they resemble pure noise, and how it recovers the original image from noise through the reverse process.
+
+![Diffusion Step 1](./assets/d1.png)
+![Diffusion Step 2](./assets/d2.png)
+![Diffusion Step 3](./assets/d3.png)
+![Diffusion Step 4](./assets/d4.png)
+![Diffusion Step 5](./assets/d5.png)
+
+## Final Results and Conclusion
+
+The project demonstrates the ability to generate realistic images of cars using a DDPM trained from scratch. With more training and a larger model, the quality of generated images significantly improves, showcasing the model's potential in generative tasks.
+
+![Final Generated Image](./assets/f1.png)
+
+## Features and Support
+
+- **GPU Acceleration**: The project is designed to utilize GPU resources efficiently, drastically reducing training time.
+- **High Customizability**: With adjustable hyperparameters, the model can be tailored to different datasets and requirements.
+- **Scalability**: The architecture supports scaling up to larger models for improved quality and detail in generated images.
+
+## Future Work
+
+- **Dataset Expansion**: Experimenting with different and larger datasets to explore the model's versatility.
+- **Architecture Enhancements**: Investigating the impact of modifications to the U-Net architecture on the model's performance.
+- **Optimization Techniques**: Applying advanced training techniques and optimizations for further improvements in image quality.
 
 ---
-## Diffusion steps
+## Purpose and Educational Value
 
-Below are the diffusion steps, from the original image to the left all the way to pure noise to the right.
+This project is developed with an educational purpose in mind, aimed at enthusiasts and learners who are keen on a white-box understanding of Denoising Diffusion Probabilistic Models (DDPMs). By building a DDPM from scratch, I intend to demystify the inner workings of such models, providing a clear and comprehensive insight into their mechanisms, challenges, and immense potential in generative tasks.
 
-![image](./assets/d1.png)
-![image](./assets/d2.png)
-![image](./assets/d3.png)
-![image](./assets/d4.png)
-![image](./assets/d5.png)
+### For Learners:
+
+- **Deep Dive into DDPMs**: This project serves as a practical guide to understanding the principles, mathematics, and implementation details that underpin DDPMs.
+- **Hands-On Experience**: By following along with the project, learners can gain hands-on experience in implementing, training, and experimenting with diffusion models, fostering a deeper understanding of deep learning.
+- **Open-Ended Exploration**: The project encourages exploration beyond the provided implementation, inviting learners to tweak, enhance, and adapt the model to different datasets or creative applications.
 
 ---
 
-## Final Results
+# Stay Updated
 
- In the Notebook I only trained it for 3 epochs but If you were to train for much longer, and/or use a larger model (for example, the one defined above in the commented lines has 55 Million parameters) and let it train for several hours, we would get something even better, like this:
+If you like this project and are interested in more "WhiteBox" understanding projects, be sure to let me know by giving it a star ⭐ and following me on GitHub.
 
- ![image](./assets/f1.png)
+**More exciting projects are on the way!**
+
+[![GitHub stars](https://img.shields.io/github/stars/MayurHulke/Diffusion-model-from-scratch?style=social)](https://github.com/MayurHulke/Diffusion-model-from-scratch)
+[![GitHub followers](https://img.shields.io/github/followers/MayurHulke?style=social)](https://github.com/MayurHulke)
+
+Click [here](https://github.com/MayurHulke) to visit my profile.
+
+
+
